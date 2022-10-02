@@ -14,6 +14,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   public products: IProduct[] = [];
   public searchText: string = '';
+  public page: number = 1;
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(
@@ -32,10 +33,12 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
   private getProducts(): void {
-    this.productsService.getProducts()
+    this.productsService.getProducts(this.page)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(res => {
-        this.products = res;
+        const tempProducts = [...this.products];
+        tempProducts.push(...res);
+        this.products = tempProducts;
       })
   }
 
@@ -45,6 +48,11 @@ export class ProductsComponent implements OnInit, OnDestroy {
       .subscribe(value => {
       this.searchText = value;
     })
+  }
+
+  public onScroll(): void {
+    this.page++;
+    this.getProducts();
   }
 
 }

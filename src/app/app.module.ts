@@ -12,6 +12,7 @@ import { ProductsComponent } from './pages/products/components/products/products
 import { CardComponent } from './pages/products/components/products/card/card.component';
 import { ProductDetailsComponent } from './pages/products/components/products/product-details/product-details.component';
 import { FilterPipe } from './core/pipes/filter.pipe';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FilterPipe } from './core/pipes/filter.pipe';
         AppRoutingModule,
         HttpClientModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        InfiniteScrollModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

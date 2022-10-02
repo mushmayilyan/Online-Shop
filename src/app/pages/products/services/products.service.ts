@@ -11,8 +11,8 @@ export class ProductsService {
   private  http: HttpClient,
   ) { }
 
-  public getProducts(): Observable<any> {
-    return this.http.get(' http://localhost:3000/Products?page=1&_limit=10');
+  public getProducts(page: number): Observable<any> {
+    return this.http.get(` http://localhost:3000/Products?_page=${page}&_limit=6`);
   }
 
   public getProductById(id: string): Observable<any> {
