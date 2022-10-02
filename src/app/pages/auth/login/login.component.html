@@ -1,0 +1,31 @@
+<div class="container">
+  <form [formGroup]="loginForm" class="login-form">
+
+    <h1 class="title">Login</h1>
+
+    <div class="field">
+      <p class="user-password">User Name</p>
+      <input type="email" placeholder="Enter email..." name="test" formControlName="email" class="input-field">
+      <small *ngIf="loginForm.controls['email'].dirty
+        && loginForm.controls['email'].hasError('email')"
+      >Email validator error</small>
+      <small class="error-text" *ngIf="loginForm.controls['email'].dirty
+         &&  loginForm.controls['email'].hasError('required')"
+      >Email required</small>
+    </div>
+
+    <div class="field">
+      <p class="user-password">Password</p>
+      <input type="password" placeholder="Enter Password..." name="pass" autocomplete="new-pass"
+             formControlName="password" class="input-field">
+      <small class="error-text" *ngIf="loginForm.controls['password'].dirty
+         &&  loginForm.controls['password'].hasError('required')"
+      >Password required</small>
+    </div>
+
+    <div>
+      <button class="btn" (click)="login()">Login</button>
+    </div>
+
+  </form>
+</div>

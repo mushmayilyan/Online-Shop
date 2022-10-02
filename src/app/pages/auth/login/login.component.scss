@@ -1,0 +1,61 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background: #e2e3e3;
+
+  .login-form {
+    text-align: center;
+    width: 340px;
+
+    .title {
+      color: #2b555ee3;
+      margin-bottom: 24px;
+    }
+
+    .field {
+      margin: 16px 0;
+      .user-password {
+        margin: 6px 20px;
+        text-align: start;
+        font-size: 16px;
+        color: #403333;
+      }
+    }
+
+    .input-field {
+      width: 100%;
+      box-sizing: border-box;
+      height: 44px;
+      border: 1px solid grey;
+      border-radius: 20px;
+      padding-left: 20px;
+      &::placeholder {
+        color: #969393CA;
+      }
+    }
+  }
+
+  .btn {
+    width: 130px;
+    height: 44px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2b555ee3;
+    background: #d6cccc73;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      background: #2b555ee3;
+      color: cornsilk;
+    }
+  }
+
+  .error-text {
+    color: red;
+  }
+}
