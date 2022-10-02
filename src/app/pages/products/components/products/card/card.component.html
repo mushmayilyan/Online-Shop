@@ -1,0 +1,9 @@
+<div class="card-container" *ngIf="product">
+  <div class="img-container">
+    <img [src]="product.image" alt="Product Image" class="img" width="180">
+  </div>
+  <h3 class="title">{{ product.title }}</h3>
+  <p class="description">{{ product.description }}</p>
+  <p class="price">Price:  {{ product.price }}$</p>
+  <button class="btn" [routerLink]="['/products', product.id]">View Details</button>
+</div>

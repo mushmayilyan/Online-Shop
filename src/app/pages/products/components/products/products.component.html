@@ -1,0 +1,3 @@
+<div class="container" *ngIf="products.length">
+  <app-card [product]="product" *ngFor="let product of products | filter: searchText.toLowerCase()"></app-card>
+</div>

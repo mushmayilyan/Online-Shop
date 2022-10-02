@@ -1,0 +1,46 @@
+.card-container {
+  width: 400px;
+  height: 500px;
+  padding: 20px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  border: 1px solid #e1dddd;
+  border-radius: 8px;
+  .img-container {
+    height: 220px;
+    align-self: center;
+
+    .img {
+      height: 100%;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .btn {
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background: #152b3e;
+    color: #d1daa6;
+    cursor: pointer;
+    &:hover {
+      background: #d1daa6;
+      color: #152b3e;
+      font-weight: bold;
+    }
+  }
+
+}

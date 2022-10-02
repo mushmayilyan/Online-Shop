@@ -1,0 +1,17 @@
+<div class="card-container" *ngIf="product">
+  <div class="img-container">
+    <img [src]="product.image" alt="Product Image" class="img" width="180">
+  </div>
+  <h3 class="title">{{ product.title }}</h3>
+  <p class="description">{{ product.description }}</p>
+  <div class="price-section">
+    <p>Price:  {{ price | number : '1.2' }} $</p><br>
+    Quantity:
+    <input type="number"
+           class="price-input"
+           [(ngModel)]="value"
+           (ngModelChange)="changeQuantity($event)"
+           value="1"
+           min="1">
+  </div>
+</div>

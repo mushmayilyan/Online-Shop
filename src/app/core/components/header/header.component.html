@@ -1,0 +1,8 @@
+<div class="container">
+  <h1 class="title" routerLink="/">Online Shop</h1>
+  <div class="inp-btn">
+    <input type="text" class="input" placeholder="Search..." [formControl]="searchControl">
+    <button class="search-btn" (click)="search()">Search</button>
+  </div>
+  <button (click)="logout()" class="logout-btn">Log Out</button>
+</div>
